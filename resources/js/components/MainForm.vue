@@ -4,7 +4,7 @@
     <p class="mt-2 text-center text-sm text-red-600" v-if="error !== ''">
       {{ error }}
     </p>
-    <p class="mt-2 text-center text-sm" v-if="shortenedLink !== ''">
+    <p class="mt-2 text-center text-sm" v-if="shortenedLink !== '' && error === ''">
       Shortened URL:
       <a :href="shortenedLink" class="font-medium text-indigo-600 hover:text-indigo-500">
         {{ shortenedLink }}
@@ -31,7 +31,6 @@
 <script>
 import useShortenedLink from '../composables/link';
 import { reactive } from 'vue';
-import { onMounted } from 'vue';
 
 export default {
   name: 'MainForm',
